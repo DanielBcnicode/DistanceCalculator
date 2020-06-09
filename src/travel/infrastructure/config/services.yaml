@@ -1,0 +1,25 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Console\:
+    resource: '../../../../src'
+    exclude:
+      - '../../../../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+      - '../../../../src/travel/infrastructure/symfony/AppKernel.php'
+
+  Symfony\Component\Console\Application:
+    # why public? so we can get it from container in bin file
+    # via "$container->get(Application::class)"
+    public: true
+
+  Console\travel\infrastructure\command\TravelCommand:
+    arguments:
+      - '@Console\travel\application\CalculateTravel'
+    tags:
+      - { name: console.command }
+  Console\travel\infrastructure\ObtainCitiesFromFile: ~
+  Console\travel\application\CalculateTravel:
+    arguments: ['@Console\travel\infrastructure\ObtainCitiesFromFile']
