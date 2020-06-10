@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Console\travel\domain\valueObjects;
 
 use Console\travel\domain\NotCityObject;

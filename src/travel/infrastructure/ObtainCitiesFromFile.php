@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Console\travel\infrastructure;
 
 use Console\travel\domain\CitiesSourceNotFound;
