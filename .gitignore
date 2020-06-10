@@ -2,3 +2,5 @@
 /var/
 .idea/
 .cities.txt.swp
+.DS_Store
+.phpunit.result.cache

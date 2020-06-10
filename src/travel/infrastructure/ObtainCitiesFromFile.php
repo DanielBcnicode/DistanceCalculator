@@ -46,7 +46,6 @@ class ObtainCitiesFromFile implements ObtainCities
         if (count($items) != 3) {
             throw new ParseFileError(count($items) . "- $line");
         }
-        echo $line . "\n";
         return ['Name' => $items[0], 'Lat' => $items[1], 'Lon' => $items[2]];
     }
 
