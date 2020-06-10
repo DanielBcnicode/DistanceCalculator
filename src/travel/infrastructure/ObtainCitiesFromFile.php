@@ -15,7 +15,7 @@ class ObtainCitiesFromFile implements ObtainCities
     public function run(string $source): array
     {
         if (!file_exists($source)) {
-            throw new CitiesSourceNotFound();
+            throw new CitiesSourceNotFound("File $source not found");
         }
         $contentString = file_get_contents($source);
 
