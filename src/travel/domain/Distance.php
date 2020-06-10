@@ -2,7 +2,7 @@
 
 namespace Console\travel\domain;
 
-class Latitude extends FloatValue
+class Distance extends FloatValue
 {
 
 }

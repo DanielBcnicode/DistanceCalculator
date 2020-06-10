@@ -22,7 +22,9 @@ services:
       - { name: console.command }
   Console\travel\infrastructure\ObtainCitiesFromFile: ~
   Console\travel\application\ArrayToCityTransform: ~
+  Console\travel\domain\NearestCityAlgorithm: ~
   Console\travel\application\CalculateTravel:
     arguments:
       - '@Console\travel\infrastructure\ObtainCitiesFromFile'
       - '@Console\travel\application\ArrayToCityTransform'
+      - '@Console\travel\domain\NearestCityAlgorithm'

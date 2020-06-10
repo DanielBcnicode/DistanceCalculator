@@ -4,6 +4,9 @@ namespace Console\travel\domain;
 
 class City
 {
+    const PI = 3.13159265;
+    const RADIU = 6378;
+
     private CityName $name;
     private Longitude $longitude;
     private Latitude $latitude;
@@ -23,9 +26,9 @@ class City
     static function createFromPrimitives(string $name, float $latitude, float $longitude): self
     {
         return new self(
-            CityName::create($name),
-            Latitude::create($latitude),
-            Longitude::create($longitude)
+            CityName::fromValue($name),
+            Latitude::fromValue($latitude),
+            Longitude::fromValue($longitude)
         );
     }
 
@@ -55,5 +58,21 @@ class City
         }
 
         return false;
+    }
+
+    public function distanceTo(City $city): Distance
+    {
+        $lat1 = $this->latitude->value() * self::PI / 180;
+        $lat2 = $city->latitude()->value() * self::PI / 180;
+        $long1 = $this->longitude->value() * self::PI / 180;
+        $long2 = $city->longitude()->value() * self::PI / 180;
+
+        $deltaLat = $lat2 - $lat1;
+        $deltaLong = $long2 - $long1;
+        $a = pow(sin($deltaLat / 2), 2.0) + cos($lat1) *
+            cos($lat2) * pow(sin($deltaLong / 2), 2);
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+
+        return Distance::fromValue(self::RADIU * $c);
     }
 }

@@ -20,7 +20,7 @@ class CityName
     /**
      * @throws WrongCityName
      */
-    public static function create(string $value) : self
+    public static function fromValue(string $value) : self
     {
         return new static($value);
     }

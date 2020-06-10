@@ -12,7 +12,7 @@ class CityNameTest extends TestCase
 {
     public function test_when_create_the_value_is_unaltered()
     {
-        $cityName = CityName::create("Barcelona");
+        $cityName = CityName::fromValue("Barcelona");
 
         $this->assertEquals("Barcelona", $cityName->value());
     }
@@ -21,14 +21,14 @@ class CityNameTest extends TestCase
     {
         $this->expectException(WrongCityName::class);
 
-        $cityName = CityName::create("");
+        $cityName = CityName::fromValue("");
     }
 
     public function test_when_compare_two_objects_then_the_results_is_ok()
     {
-        $cityNameA = CityName::create("Barcelona");
-        $cityNameB = CityName::create("Tokio");
-        $cityNameC = CityName::create("Barcelona");
+        $cityNameA = CityName::fromValue("Barcelona");
+        $cityNameB = CityName::fromValue("Tokio");
+        $cityNameC = CityName::fromValue("Barcelona");
 
         $this->assertTrue($cityNameA->isEqual($cityNameC));
         $this->assertFalse($cityNameB->isEqual($cityNameC));

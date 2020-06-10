@@ -21,9 +21,9 @@ class CityTest extends TestCase
 
     public function test_when_create2_object_attributes_are_the_same()
     {
-        $cityName = CityName::create("Barcelona");
-        $latitude = Latitude::create(10.10);
-        $longitude = Longitude::create(20.20);
+        $cityName = CityName::fromValue("Barcelona");
+        $latitude = Latitude::fromValue(10.10);
+        $longitude = Longitude::fromValue(20.20);
         $city = City::create($cityName, $latitude, $longitude);
 
         $this->assertEquals("Barcelona", $city->name()->value());

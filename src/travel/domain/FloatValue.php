@@ -2,7 +2,7 @@
 
 namespace Console\travel\domain;
 
-class Coordinate
+class FloatValue
 {
     private float $value;
 
@@ -11,7 +11,7 @@ class Coordinate
         $this->value = $value;
     }
 
-    public static function create(float $value) : self
+    public static function fromValue(float $value) : self
     {
         return new static($value);
     }

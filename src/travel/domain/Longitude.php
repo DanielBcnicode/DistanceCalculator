@@ -2,7 +2,7 @@
 
 namespace Console\travel\domain;
 
-class Longitude extends Coordinate
+class Longitude extends FloatValue
 {
 
 }
