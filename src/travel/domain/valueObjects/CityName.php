@@ -1,6 +1,8 @@
 <?php
 
-namespace Console\travel\domain;
+namespace Console\travel\domain\valueObjects;
+
+use Console\travel\domain\WrongCityName;
 
 class CityName
 {

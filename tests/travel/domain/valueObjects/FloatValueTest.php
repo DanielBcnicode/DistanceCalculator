@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace travel\domain;
 
-use Console\travel\domain\FloatValue;
+use Console\travel\domain\valueObjects\FloatValue;
 use PHPUnit\Framework\TestCase;
 
 class FloatValueTest extends TestCase

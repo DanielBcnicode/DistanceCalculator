@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Console\travel\domain;
 
+use Console\travel\domain\valueObjects\Cities;
+use Console\travel\domain\valueObjects\City;
+
 class NearestCityAlgorithm implements Algorithm
 {
     private array $list;

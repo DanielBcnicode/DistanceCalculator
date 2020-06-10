@@ -3,8 +3,8 @@
 namespace Console\travel\application;
 
 use Console\travel\domain\Algorithm;
-use Console\travel\domain\Cities;
-use Console\travel\domain\City;
+use Console\travel\domain\valueObjects\Cities;
+use Console\travel\domain\valueObjects\City;
 use Console\travel\domain\ObtainCities;
 use Console\travel\domain\TransformToCity;
 
@@ -48,7 +48,7 @@ class CalculateTravel
     private function transformResponse(Cities $cities): array
     {
         $nameList = [];
-        /** @var City $city */
+        /** @var \Console\travel\domain\valueObjects\City $city */
         foreach ($cities->data() as $city) {
             $nameList[] = $city->name()->value();
         }

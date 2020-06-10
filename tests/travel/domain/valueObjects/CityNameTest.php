@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace travel\domain;
 
-use Console\travel\domain\CityName;
+use Console\travel\domain\valueObjects\CityName;
 use Console\travel\domain\WrongCityName;
 use PHPUnit\Framework\TestCase;
 

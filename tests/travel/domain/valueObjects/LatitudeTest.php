@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace travel\domain;
 
-use Console\travel\domain\Latitude;
+use Console\travel\domain\valueObjects\Latitude;
 use PHPUnit\Framework\TestCase;
 
 class LatitudeTest extends TestCase

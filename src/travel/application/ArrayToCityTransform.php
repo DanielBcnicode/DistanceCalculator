@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Console\travel\application;
 
-use Console\travel\domain\City;
+use Console\travel\domain\valueObjects\City;
 use Console\travel\domain\FieldNotFoundInTransformation;
 use Console\travel\domain\TransformToCity;
 

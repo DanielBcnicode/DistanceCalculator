@@ -1,6 +1,6 @@
 <?php
 
-namespace Console\travel\domain;
+namespace Console\travel\domain\valueObjects;
 
 class Longitude extends FloatValue
 {
