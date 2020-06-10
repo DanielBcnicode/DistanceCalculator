@@ -27,7 +27,7 @@ class TravelCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(implode("\n", $this->useCase->execute("cities.txt")));
+        $output->writeln(var_dump($this->useCase->execute("cities.txt")));
         return 0;
     }
 }
